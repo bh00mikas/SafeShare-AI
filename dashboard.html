@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SafeShare AI Dashboard</title>
+
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="mainContainer">
+
+
+        <!-- HEADER -->
+
+        <div class="topHeader">
+
+            <div class="logoSection">
+
+                <div class="logoBox">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h1>SafeShare AI</h1>
+
+                    <p>
+                        PRIVACY INTELLIGENCE PLATFORM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="statusBox">
+
+                🟢 AI SHIELD ACTIVE •
+
+                <span id="liveScans">
+                    0
+                </span>
+
+                SCANS
+
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="statsGrid">
+
+            <div class="statCard">
+
+                <h2 id="scanCount">
+                    0
+                </h2>
+
+                <p>Total Scans</p>
+
+            </div>
+
+
+            <div class="statCard danger">
+
+                <h2 id="totalThreats">
+                    0
+                </h2>
+
+                <p>Threats Found</p>
+
+            </div>
+
+
+            <div class="statCard success">
+
+                <h2 id="protectedData">
+                    0
+                </h2>
+
+                <p>Data Protected</p>
+
+            </div>
+
+
+            <div class="statCard warning">
+
+                <h2 id="riskScore">
+                    0
+                </h2>
+
+                <p>Avg Risk Score</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- OCR -->
+
+        <div class="scannerBox">
+
+            <h2>
+                OCR Privacy Scanner
+            </h2>
+
+            <p>
+                Upload images to detect and
+                redact sensitive information.
+            </p>
+
+            <input
+                type="file"
+                id="imageUpload"
+                accept="image/*"
+            >
+
+        </div>
+
+
+        <!-- CANVAS -->
+
+        <div class="canvasBox">
+
+            <canvas id="canvas"></canvas>
+
+        </div>
+
+
+        <!-- ANALYTICS -->
+
+        <div class="analyticsGrid">
+
+
+            <!-- THREATS -->
+
+            <div class="threatBox">
+
+                <h2>
+                    ■ Threat Categories Detected
+                </h2>
+
+
+                <div class="threatItem">
+
+                    <span>Email Address</span>
+
+                    <div class="bar">
+
+                        <div
+                            class="fill cyan"
+                            id="emailBar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="threatItem">
+
+                    <span>Password</span>
+
+                    <div class="bar">
+
+                        <div
+                            class="fill red"
+                            id="passwordBar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="threatItem">
+
+                    <span>API Keys</span>
+
+                    <div class="bar">
+
+                        <div
+                            class="fill yellow"
+                            id="apiBar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDATIONS -->
+
+            <div class="recommendationBox">
+
+                <h2>
+                    ■ Security Recommendations
+                </h2>
+
+
+                <div class="recommendation">
+
+                    🔑 Never share API keys in chats
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    📸 Blur sensitive screenshots
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    🔗 Use temporary sharing links
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    🧹 Strip file metadata
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="resultsBox">
+
+            <h2>
+                Detected Threats
+            </h2>
+
+            <div id="results">
+
+                No scans yet.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="detector.js"></script>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

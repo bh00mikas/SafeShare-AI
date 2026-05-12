@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+
+  "name": "SafeShare AI",
+
+  "version": "1.0",
+
+  "description": "AI-powered privacy protection extension for detecting and masking sensitive information.",
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.ocr.space/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SafeShare AI"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "detector.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
